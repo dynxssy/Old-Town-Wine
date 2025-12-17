@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old Town Wine Bar & Restaurant | Dublin 8</title>
+
+    <!-- EXTERNAL LIBRARIES -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- FONTS & STYLES -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="antialiased">
+
+    <!-- ==========================================
+         HTML STRUCTURE
+         ========================================== -->
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#F9F7F2]/95 backdrop-blur-md border-b border-gray-200 transition-all duration-300"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="/sprites/logo.jpg" alt="Old Town Logo"
+                        class="h-12 w-auto object-contain mr-3 rounded-full"
+                        onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex'">
+
+                    <!-- Fallback if image fails -->
+                    <div id="fallback-logo"
+                        class="w-10 h-10 bg-[#722F37] text-white hidden items-center justify-center rounded-full mr-3">
+                        <i data-lucide="wine" class="w-6 h-6"></i>
+                    </div>
+
+                    <div>
+                        <span class="serif text-xl font-bold tracking-tight text-gray-900 block leading-none">OLD
+                            TOWN</span>
+                        <span class="text-xs tracking-[0.2em] text-[#722F37] uppercase">Wine Bar & Restaurant</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Links -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about"
+                        class="text-gray-600 hover:text-[#722F37] transition-colors text-sm font-medium tracking-wide">ABOUT</a>
+                    <a href="#menu"
+                        class="text-gray-600 hover:text-[#722F37] transition-colors text-sm font-medium tracking-wide">MENUS</a>
+                    <a href="https://www.opentable.ie/r/old-town-wine-bar-and-restaurant-dublin-8" target="_blank"
+                        class="btn-primary bg-[#722F37] hover:bg-[#4a1a21] text-white px-8 py-3 rounded-none shadow-md hover:shadow-lg inline-flex items-center justify-center">
+                        Book a Table
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-[#722F37] focus:outline-none p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="md:hidden bg-[#F9F7F2] border-t border-gray-200 absolute w-full shadow-xl overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="#about"
+                    class="flex items-center gap-3 px-3 py-3 text-base font-medium text-gray-700 hover:text-[#722F37] hover:bg-gray-50 rounded-md transition-colors">
+                    <i data-lucide="info" class="w-5 h-5"></i>
+                    <span>About</span>
+                </a>
+                <a href="#menu"
+                    class="flex items-center gap-3 px-3 py-3 text-base font-medium text-gray-700 hover:text-[#722F37] hover:bg-gray-50 rounded-md transition-colors">
+                    <i data-lucide="book-open" class="w-5 h-5"></i>
+                    <span>Menus</span>
+                </a>
+                <a href="https://www.opentable.ie/r/old-town-wine-bar-and-restaurant-dublin-8" target="_blank"
+                    class="flex items-center gap-3 w-full text-left px-3 py-3 text-base font-medium text-[#722F37] font-bold hover:bg-gray-50 rounded-md transition-colors">
+                    <i data-lucide="calendar" class="w-5 h-5"></i>
+                    <span>Book a Table</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 z-10"></div>
+            <img src="/sprites/home.jpeg" alt="Old Town Wine Bar Interior"
+                class="w-full h-full object-cover animate-pulse-slow">
+        </div>
+
+        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto mt-16">
+            <span
+                class="text-[#D4AF37] tracking-[0.3em] uppercase text-sm font-semibold mb-4 block animate-fade-in-up">Dublin
+                8</span>
+            <h1
+                class="text-5xl md:text-7xl text-white font-bold mb-6 leading-tight animate-fade-in-up delay-100 text-shadow-wide">
+                A Taste of History,<br>
+                <span class="serif italic font-light">Poured in the Present.</span>
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light animate-fade-in-up delay-200">
+                Sustainable wines and seasonal small plates in the heart of historic Le Pole Square.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
+                    <button onclick="document.getElementById('menu').scrollIntoView()"
+                        class="btn-outline bg-transparent text-white border-white hover:bg-white hover:text-gray-900 px-10 py-4 rounded-none font-medium">
+                        View Menu
+                    </button>
+                    <a href="https://www.opentable.ie/r/old-town-wine-bar-and-restaurant-dublin-8" target="_blank"
+                        class="btn-primary bg-[#722F37] text-white px-10 py-4 rounded-none shadow-lg hover:bg-[#5a232b] border border-[#722F37] hover:border-[#5a232b] inline-flex items-center justify-center">
+                        Make a Reservation
+                    </a>
+                </div>
+            </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 md:py-32 px-4 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative group">
+                <div
+                    class="absolute -inset-4 bg-[#722F37]/10 rounded-xl transform rotate-2 transition-transform duration-500 group-hover:rotate-1">
+                </div>
+                <img src="/sprites/about.jpeg" alt="Wine Pouring"
+                    class="relative rounded-lg shadow-2xl w-full h-auto object-cover aspect-[4/5]">
+                <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-xl max-w-xs hidden md:block">
+                    <p class="serif italic text-xl text-gray-800">"Nominated for Best Wine Bar within its first year."
+                    </p>
+                </div>
+            </div>
+            <div id="about" class="scroll-mt-24">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="h-px w-12 bg-[#722F37]"></span>
+                    <span class="text-[#722F37] uppercase tracking-widest text-sm font-semibold">Our Story</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">Cosy, Contemporary & <span
+                        class="text-[#722F37] serif italic">Charming</span></h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Tucked away in historic Dublin 8, Old Town Wine Bar & Restaurant is a cosy, contemporary addition to
+                    the city’s dining scene. Nestled in landscaped Le Pole Square, just steps from the ancient St.
+                    Michael Le Pole church.
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 mb-8 mt-6">
+                    <div class="border-l-2 border-[#D4AF37] pl-4">
+                        <span class="block text-2xl font-bold text-gray-900">70+</span>
+                        <span class="text-sm text-gray-500">Curated Wines</span>
+                    </div>
+                    <div class="border-l-2 border-[#D4AF37] pl-4">
+                        <span class="block text-2xl font-bold text-gray-900">100%</span>
+                        <span class="text-sm text-gray-500">Sustainable Focus</span>
+                    </div>
+                </div>
+
+                <a href="#contact"
+                    class="inline-flex items-center text-[#722F37] font-bold uppercase tracking-widest text-xs hover:underline decoration-2 underline-offset-4 group">
+                    Get in touch
+                    <i data-lucide="arrow-right"
+                        class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-[#D4AF37] uppercase tracking-widest text-sm font-semibold">Discover</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2">The Collection</h2>
+            </div>
+
+            <!-- Main Toggle -->
+            <div class="flex justify-center mb-10">
+                <div class="bg-gray-100 p-1 rounded-none inline-flex relative">
+                    <div id="category-pill"
+                        class="absolute top-1 left-1 w-[calc(50%-4px)] h-[calc(100%-8px)] bg-white rounded-none shadow-md transition-all duration-300 transform translate-x-0">
+                    </div>
+                    <button onclick="app.setMainCategory('wine')"
+                        class="relative z-10 px-8 py-2 rounded-none text-sm font-medium transition-colors duration-300 text-gray-900"
+                        id="btn-wine">Wine List</button>
+                    <button onclick="app.setMainCategory('food')"
+                        class="relative z-10 px-8 py-2 rounded-none text-sm font-medium transition-colors duration-300 text-gray-500"
+                        id="btn-food">Food Menu</button>
+                </div>
+            </div>
+
+            <!-- Sub Nav -->
+            <div class="border-b border-gray-200 mb-10 overflow-x-auto no-scrollbar">
+                <div class="flex justify-start md:justify-center space-x-8 px-4 min-w-max" id="sub-nav"></div>
+            </div>
+
+            <!-- Grid -->
+            <div id="menu-grid" class="grid md:grid-cols-2 lg:grid-cols-2 gap-x-12 gap-y-10 min-h-[400px]"></div>
+        </div>
+    </section>
+
+    <!-- Lead Gen Section -->
+    <section class="py-20 bg-[#2D2D2D] text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-[#722F37] rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl opacity-10">
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <i data-lucide="mail" class="w-12 h-12 mx-auto text-[#D4AF37] mb-6"></i>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Join the Inner Circle</h2>
+            <p class="text-gray-300 mb-8 max-w-lg mx-auto">Sign up for exclusive invitations to wine tastings, early
+                access to new vintages, and corporate event specials.</p>
+
+            <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-0" onsubmit="app.handleLeadGen(event)">
+                <input type="email" placeholder="Your email address" required
+                    class="flex-1 px-6 py-4 rounded-none bg-white font-medium text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0">
+                <button type="submit"
+                    class="btn-primary bg-[#D4AF37] hover:bg-[#b5952f] text-[#2D2D2D] font-bold px-8 py-4 rounded-none shadow-lg">
+                    Subscribe
+                </button>
+            </form>
+            <p class="text-xs text-gray-500 mt-4">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#F9F7F2] border-t border-gray-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <div class="w-8 h-8 bg-[#722F37] text-white flex items-center justify-center rounded-full">
+                        <i data-lucide="wine" class="w-4 h-4"></i>
+                    </div>
+                    <span class="serif text-lg font-bold">OLD TOWN</span>
+                </div>
+                <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                    Historic charm meets modern hospitality. A sustainable wine bar and restaurant in the heart of
+                    Dublin 8.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-gray-900 mb-6 uppercase text-sm tracking-wider">Contact</h4>
+                <ul class="space-y-4 text-sm text-gray-600">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-[#722F37] mt-0.5"></i>
+                        <span>Le Pole Square, Dublin 8, Ireland</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="phone" class="w-5 h-5 text-[#722F37]"></i>
+                        <a href="tel:+35312345678" class="hover:text-[#722F37]">+353 1 234 5678</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-gray-900 mb-6 uppercase text-sm tracking-wider">Hours</h4>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li class="flex justify-between border-b border-gray-200 pb-2"><span>Mon - Wed</span><span>4:00 PM -
+                            11:00 PM</span></li>
+                    <li class="flex justify-between border-b border-gray-200 pb-2"><span>Thu - Fri</span><span>4:00 PM -
+                            12:30 AM</span></li>
+                    <li class="flex justify-between border-b border-gray-200 pb-2"><span>Saturday</span><span>12:00 PM -
+                            12:30 AM</span></li>
+                    <li class="flex justify-between pt-2"><span>Sunday</span><span>1:00 PM - 11:00 PM</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 text-center border-t border-gray-200 pt-8">
+            <p class="text-gray-400 text-xs">&copy; 2025 Old Town Wine Bar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop">
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl transform scale-95 opacity-0 transition-all duration-300"
+                id="modal-content">
+                <div class="p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 serif">Book a Table</h3>
+                        <button onclick="app.closeModal()" class="text-gray-400 hover:text-gray-600 p-1">
+                            <i data-lucide="x" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+
+                    <form id="booking-form" onsubmit="app.handleBooking(event)" class="space-y-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="input-group relative mt-2">
+                                <input type="date" required
+                                    class="w-full border-b border-gray-300 py-2 focus:border-[#722F37] outline-none transition-colors bg-transparent placeholder-transparent">
+                                <label class="absolute left-0 -top-3.5 text-gray-500 text-sm">Date</label>
+                            </div>
+                            <div class="input-group relative mt-2">
+                                <select
+                                    class="w-full border-b border-gray-300 py-2 focus:border-[#722F37] outline-none transition-colors bg-transparent">
+                                    <option>2 Guests</option>
+                                    <option>3 Guests</option>
+                                    <option>4 Guests</option>
+                                    <option>5+ Guests</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group relative mt-4">
+                            <input type="text" placeholder=" " required
+                                class="w-full border-b border-gray-300 py-2 focus:border-[#722F37] outline-none transition-colors bg-transparent">
+                            <label
+                                class="absolute left-0 top-2 text-gray-400 pointer-events-none transition-all duration-200">Full
+                                Name</label>
+                        </div>
+                        <div class="input-group relative mt-4">
+                            <input type="email" placeholder=" " required
+                                class="w-full border-b border-gray-300 py-2 focus:border-[#722F37] outline-none transition-colors bg-transparent">
+                            <label
+                                class="absolute left-0 top-2 text-gray-400 pointer-events-none transition-all duration-200">Email
+                                Address</label>
+                        </div>
+                        <button type="submit"
+                            class="w-full btn-primary bg-[#722F37] text-white py-4 rounded-none font-bold shadow-lg mt-4 hover:shadow-xl hover:bg-[#5a232b]">
+                            Confirm Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast"
+        class="fixed bottom-5 right-5 z-[110] transform translate-y-20 opacity-0 transition-all duration-300">
+        <div class="bg-gray-900 text-white px-6 py-4 rounded-lg shadow-xl flex items-center gap-3">
+            <div class="text-[#D4AF37]"><i data-lucide="check-circle" class="w-5 h-5"></i></div>
+            <div>
+                <h4 class="font-bold text-sm">Success!</h4>
+                <p class="text-xs text-gray-300" id="toast-message">Request sent successfully.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         JAVASCRIPT LOGIC
+         ========================================== -->
+    <!-- ==========================================
+         JAVASCRIPT LOGIC
+         ========================================== -->
+    <script src="script.js"></script>
+</body>
+
+</html>
